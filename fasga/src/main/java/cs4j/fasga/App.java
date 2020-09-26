@@ -103,7 +103,7 @@ public class App
         {
             if (segStem.getBoolean(pos))
             {
-                classes.setValue(pos, classes.getValue(pos) + 1);
+                classes.setValue(classes.getValue(pos) + 1, pos);
             }
         }
 //        // V3
