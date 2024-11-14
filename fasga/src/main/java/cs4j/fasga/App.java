@@ -3,20 +3,20 @@ package cs4j.fasga;
 import java.io.File;
 import java.io.IOException;
 
-import net.sci.array.scalar.ScalarArray;
-import net.sci.array.scalar.UInt8Array;
+import net.sci.array.binary.BinaryArray2D;
 import net.sci.array.color.RGB8Array2D;
-import net.sci.array.scalar.BinaryArray2D;
-import net.sci.array.scalar.UInt8Array2D;
+import net.sci.array.numeric.ScalarArray;
+import net.sci.array.numeric.UInt8Array;
+import net.sci.array.numeric.UInt8Array2D;
 import net.sci.image.Image;
 import net.sci.image.analyze.LabelIntensities;
 import net.sci.image.binary.BinaryImages;
 import net.sci.image.io.ImageIOImageWriter;
 import net.sci.image.io.ImageWriter;
-import net.sci.image.morphology.MorphologicalFiltering;
+import net.sci.image.morphology.MorphologicalFilters;
 import net.sci.image.morphology.MorphologicalReconstruction;
 import net.sci.image.morphology.strel.Strel2D;
-import net.sci.image.process.segment.OtsuThreshold;
+import net.sci.image.segmentation.OtsuThreshold;
 import net.sci.table.Table;
 import net.sci.table.io.DelimitedTableWriter;
 import net.sci.table.io.TableWriter;
@@ -141,9 +141,9 @@ public class App
         UInt8Array2D blue = array.channel(2);
         
         Strel2D strel = Strel2D.Shape.SQUARE.fromRadius(10);
-        UInt8Array2D redF = UInt8Array2D.wrap((UInt8Array) MorphologicalFiltering.opening(red, strel));
-        UInt8Array2D greenF = UInt8Array2D.wrap((UInt8Array) MorphologicalFiltering.opening(green, strel));
-        UInt8Array2D blueF = UInt8Array2D.wrap((UInt8Array) MorphologicalFiltering.opening(blue, strel));
+        UInt8Array2D redF = UInt8Array2D.wrap((UInt8Array) MorphologicalFilters.opening(red, strel));
+        UInt8Array2D greenF = UInt8Array2D.wrap((UInt8Array) MorphologicalFilters.opening(green, strel));
+        UInt8Array2D blueF = UInt8Array2D.wrap((UInt8Array) MorphologicalFilters.opening(blue, strel));
         
         // create the label list
         int[] labels = new int[nClasses];

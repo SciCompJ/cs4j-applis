@@ -5,10 +5,10 @@ package cs4j.fasga;
 
 import Jama.Matrix;
 import Jama.QRDecomposition;
-import net.sci.array.scalar.BinaryArray2D;
-import net.sci.array.scalar.Float32Array2D;
-import net.sci.array.scalar.ScalarArray2D;
-import net.sci.array.scalar.UInt8Array2D;
+import net.sci.array.binary.BinaryArray2D;
+import net.sci.array.numeric.Float32Array2D;
+import net.sci.array.numeric.ScalarArray2D;
+import net.sci.array.numeric.UInt8Array2D;
 
 /**
  * Fit a polynomial surface to the background of an image.
